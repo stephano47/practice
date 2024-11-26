@@ -1,0 +1,12 @@
+Variables for car
+int vin = 000000000;
+String carMake = Ford;
+String carModel = Explorer;
+String carColor = Blue;
+boolean hasTowingPackage = true;
+double odometer = 0.998233;
+double price = 80900.99
+char qualityRating = A;
+int phoneNumber = 1234567890;
+int ssn = 000000000;
+int zipCode = 00000;
