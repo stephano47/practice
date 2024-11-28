@@ -1,4 +1,4 @@
-package workbook1;
+package workbook1.payRollCalculator;
 
 import java.util.Scanner;
 
