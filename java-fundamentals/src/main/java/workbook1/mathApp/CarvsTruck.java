@@ -1,4 +1,4 @@
-package workbook1;
+package workbook1.mathApp;
 import java.util.Scanner;
 public class CarvsTruck {
     public static void main(String[] args){
