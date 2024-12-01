@@ -203,13 +203,5 @@ public class rentalCarCalculator {
             System.out.println("Underage Driver Surcharge: Applied");
             System.out.println("Total: $" + String.format("%.2f", days * (basicCarRental + gpsPrice + roadsidePrice) * 1.3));
         }
-
-
-
     }
-
-
-    }
-
-
-
+}
