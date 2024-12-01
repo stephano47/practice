@@ -9,7 +9,7 @@ public static void main(String []args){
     // Start - Loan Amount Request
     Scanner scanner = new Scanner(System.in);
     System.out.println("Welcome to the Mortgage Calculator App!");
-    System.out.println("This Application will help you find out how much would you have to pay per month to pay off your rent!");
+    System.out.println("This Application will help you find out how much would you have to pay per month to pay off your home!");
     System.out.println("To start please enter how much you received from the Loan");
     int initialLoan = scanner.nextInt();
     scanner.nextLine();
@@ -37,14 +37,8 @@ public static void main(String []args){
     double totalInterestPaid = totalPayment - initialLoan;
 
     // Display the results
-    System.out.println("Display Calculations\n" + "------------------------------");
+    System.out.println("Here is your Mortgage Information!\n" + "------------------------------");
     System.out.printf("Monthly Payment: $%.2f%n", monthlyPayment);
     System.out.printf("Total Interest Paid: $%.2f%n", totalInterestPaid);
-
-
-
-}
-
-
-
+     }
 }
