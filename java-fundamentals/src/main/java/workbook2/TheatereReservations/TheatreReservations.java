@@ -15,10 +15,12 @@ public class TheatreReservations {
         String firstName = fullName[0];
         String lastName = fullName[1];
 
-        System.out.println("Please enter the day you will attend the Movie Theatre");
-        DateTimeFormatter formatter; 
+        System.out.println("Please enter the day you will attend the Movie Theatre\n" + "When entering please use (MM/DD/YYYY)");
+        DateTimeFormatter formatter;
         String date = scanner.nextLine();
-        LocalDate finalDate = LocalDate.parse(date); // as of right now LocalDate will only accept YYYY-MM-DD
+        formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy"); // need a better understanding on .ofPattern()
+
+        LocalDate finalDate = LocalDate.parse(date, formatter); // as of right now LocalDate will only accept YYYY-MM-DD
 
         System.out.println("How many tickets would you like to buy?");
         int tickets = scanner.nextInt();
@@ -30,7 +32,7 @@ public class TheatreReservations {
         } else if (tickets == 1 ) {
             System.out.println(tickets + " ticket reserved for the movie on " + finalDate + " for " + lastName +", " + firstName);
         } else if (tickets <= 0) {
-            System.out.println("No tickets where bought.");
+            System.out.println("No tickets where bought."); // when printing it does not use MM/DD/YYYY format, why?
         }
 
 
