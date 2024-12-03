@@ -1,5 +1,7 @@
 package workbook2.TheatereReservations;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class TheatreReservations {
@@ -8,10 +10,15 @@ public class TheatreReservations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Movie Theatre Application!");
         System.out.println("Please enter your Full Name"); // must split between spaces to make sure last name is displayed before first name in when all user info is collected
-        String fullName = scanner.nextLine();
+        String userName = scanner.nextLine(); // an array can be for first and last name
+        String[] fullName = userName.split(" "); // this allows me to get the first and last name as different variables
+        String firstName = fullName[0];
+        String lastName = fullName[1];
 
         System.out.println("Please enter the day you will attend the Movie Theatre");
+        DateTimeFormatter formatter; 
         String date = scanner.nextLine();
+        LocalDate finalDate = LocalDate.parse(date); // as of right now LocalDate will only accept YYYY-MM-DD
 
         System.out.println("How many tickets would you like to buy?");
         int tickets = scanner.nextInt();
@@ -19,10 +26,10 @@ public class TheatreReservations {
 
         // tickets if statements
         if (tickets > 1){
-            System.out.println(fullName+ " is buying " + tickets + " tickets for the movie showing on " + date );
+            System.out.println(tickets + " tickets reserved for the movie on " + finalDate + " for " + lastName +", " + firstName);
         } else if (tickets == 1 ) {
-            System.out.println(fullName+ " is buying " + tickets + " ticket for the movie showing on " + date );
-        } else if (tickets < 0) {
+            System.out.println(tickets + " ticket reserved for the movie on " + finalDate + " for " + lastName +", " + firstName);
+        } else if (tickets <= 0) {
             System.out.println("No tickets where bought.");
         }
 

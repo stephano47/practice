@@ -14,8 +14,8 @@ public class HighScoreWins {
         int indexOfBar = userScores.indexOf("|"); // responsible for splitting the scores and the teams
         // team names
 
-        String teamnamesString = userScores.substring(0, indexOfBar);
-        String[] teamnames = teamnamesString.split(Pattern.quote(":"));
+        String teamnamesString = userScores.substring(0, indexOfBar); // this splits the teams names
+        String[] teamnames = teamnamesString.split(Pattern.quote(":"));//indicating left and right team
 
         // scores of both teams
         String afterBar = userScores.substring(indexOfBar + 1);
