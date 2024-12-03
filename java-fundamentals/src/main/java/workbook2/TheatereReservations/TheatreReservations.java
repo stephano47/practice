@@ -28,9 +28,9 @@ public class TheatreReservations {
 
         // tickets if statements
         if (tickets > 1){
-            System.out.println(tickets + " tickets reserved for the movie on " + finalDate + " for " + lastName +", " + firstName);
+            System.out.println(tickets + " tickets reserved for the movie on " + finalDate.format(formatter) + " for " + lastName +", " + firstName);
         } else if (tickets == 1 ) {
-            System.out.println(tickets + " ticket reserved for the movie on " + finalDate + " for " + lastName +", " + firstName);
+            System.out.println(tickets + " ticket reserved for the movie on " + finalDate.format(formatter) + " for " + lastName +", " + firstName);
         } else if (tickets <= 0) {
             System.out.println("No tickets where bought."); // when printing it does not use MM/DD/YYYY format, why?
         }
