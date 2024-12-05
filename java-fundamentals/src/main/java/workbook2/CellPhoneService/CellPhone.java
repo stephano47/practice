@@ -48,5 +48,9 @@ public class CellPhone {
         this.model = model;
     }
 
+    public void dial() {
+        //cellPhone1.dial();
+    }
+
 
 }
