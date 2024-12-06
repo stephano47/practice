@@ -47,8 +47,8 @@ public class CellPhone {
         this.model = model;
     }
 
-    void dial() {
-        System.out.println(owner + "'s phone is calling 855-555-2222");
+    public void dial(String numberToDial) { // from what it seems it will only accept this string
+        System.out.println(owner + "'s phone with serial number " + this.getSerialNumber() + " is calling " +numberToDial);
     }
 // Goal of second exercise allow owner name to be printed stating the owner calling a number
 // what are parameters?

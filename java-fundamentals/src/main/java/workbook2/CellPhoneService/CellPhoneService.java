@@ -24,15 +24,20 @@ public class CellPhoneService {
         String ownerName = scanner.nextLine();
         cellPhone.setOwner(ownerName);
 
+        display(cellPhone);
+
+        cellPhone.dial("855-555-2222");
+        cellPhone.dial("888-222-0000");
+
+
+    }
+
+    public static void display(CellPhone cellPhone){
         System.out.println("Phone Information\n"+"----------------------------------");
         System.out.println("Serial Number: " + cellPhone.getSerialNumber());
         System.out.println("Phone Model: " + cellPhone.getModel());
         System.out.println("Carrier: " + cellPhone.getCarrier());
         System.out.println("Phone Number " + cellPhone.getPhoneNumber());
         System.out.println("Owner: " + cellPhone.getOwner());
-
-        cellPhone.dial();
-
-
     }
 }
