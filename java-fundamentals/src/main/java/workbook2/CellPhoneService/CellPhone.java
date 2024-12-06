@@ -7,7 +7,6 @@ public class CellPhone {
     private String phoneNumber;
     private String owner;
 
-
     public int getSerialNumber() {
         return serialNumber;
     }
@@ -48,9 +47,9 @@ public class CellPhone {
         this.model = model;
     }
 
-    public void dial() {
-        //cellPhone1.dial();
+    void dial() {
+        System.out.println(owner + "'s phone is calling 855-555-2222");
     }
-
-
+// Goal of second exercise allow owner name to be printed stating the owner calling a number
+// what are parameters?
 }

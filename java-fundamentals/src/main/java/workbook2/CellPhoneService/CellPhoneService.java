@@ -7,7 +7,7 @@ public class CellPhoneService {
     public static void main(String []args){
         CellPhone cellPhone = new CellPhone(); // method to use objects in cellPhone Class
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Cell Phone Service!+\n" +"---------------------------------------------\n"+ "Please enter your phones Serial Number\n" + "Note the serial Number should be 7 digits at max");
+        System.out.println("Welcome to the Cell Phone Service!\n" +"---------------------------------------------\n"+ "Please enter your phones Serial Number\n" + "Note the serial Number should be 7 digits at max");
         int serial = scanner.nextInt();
         scanner.nextLine();
         cellPhone.setSerialNumber(serial); // this will set the serial number for the Cell Phone Class
@@ -30,6 +30,9 @@ public class CellPhoneService {
         System.out.println("Carrier: " + cellPhone.getCarrier());
         System.out.println("Phone Number " + cellPhone.getPhoneNumber());
         System.out.println("Owner: " + cellPhone.getOwner());
+
+        cellPhone.dial();
+
 
     }
 }
