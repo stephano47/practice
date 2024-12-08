@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class CellPhoneService {
     public static void main(String []args){
-        CellPhone cellPhone = new CellPhone(); // method to use objects in cellPhone Class
+        CellPhone cellPhone = new CellPhone(109238, "Pixel", "Verizon", "123-456-7890", "Tester");// method to use objects in cellPhone Class
+        // ^ most likely variable info will be changes from the set methods
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Cell Phone Service!\n" +"---------------------------------------------\n"+ "Please enter your phones Serial Number\n" + "Note the serial Number should be 7 digits at max");
         int serial = scanner.nextInt();
@@ -40,4 +41,5 @@ public class CellPhoneService {
         System.out.println("Phone Number " + cellPhone.getPhoneNumber());
         System.out.println("Owner: " + cellPhone.getOwner());
     }
+    // should get back to this exercise
 }
