@@ -25,7 +25,8 @@ public class DiceRoll {
            }
 
      }
-       Thread.sleep(100);
+       System.out.println("Adding up all Rolls..");
+       Thread.sleep(2000);
 
 
         System.out.println("Rolls that summed to 2: " + sum2);
