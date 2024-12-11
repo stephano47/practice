@@ -26,7 +26,7 @@ public class CellPhoneService {
         cellPhone.setOwner(ownerName);
 
         display(cellPhone);
-
+        System.out.println("----------------------------------");
         cellPhone.dial("855-555-2222");
         cellPhone.dial("888-222-0000");
 
