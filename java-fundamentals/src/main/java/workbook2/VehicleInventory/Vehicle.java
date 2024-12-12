@@ -1,5 +1,5 @@
 package workbook2.VehicleInventory;
-
+import java.util.*;
 public class Vehicle {
     private long vehicleID;
     private String makeModel;
@@ -35,11 +35,28 @@ public class Vehicle {
 
     public void setPrice(float price) {this.price = price;}
 
-    public String toString() {
+    public String displayDetails() {
         return "Vehicle ID: " + vehicleID +
                 ", Make/Model: " + makeModel +
                 ", Color: " + color +
                 ", Odometer: " + odometer +
                 ", Price: $" + price;
+    }
+    public static Vehicle addVehicles(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter vehicle ID:");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.println("Enter the make and model of the vehicle:");
+        String makeModel = scanner.nextLine();
+        System.out.println("Enter the color of the vehicle:");
+        String color = scanner.nextLine();
+        System.out.println("Enter odometer:");
+        int odometer = scanner.nextInt();
+        System.out.println("Enter the price:");
+        int price = scanner.nextInt();
+
+        return new Vehicle(id, makeModel, color, odometer, price);
     }
 }

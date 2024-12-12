@@ -3,7 +3,7 @@ package workbook2.VehicleInventory;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String [] args){
+    public static void main(String [] args) throws InterruptedException {
         Vehicle[] vehicles = new Vehicle[20];
         vehicles[0] = new Vehicle(101121, "Ford Explorer", "Red",45000,13500);
         vehicles[1] = new Vehicle(101121, "Toyota Camry", "Blue",50000,9700);
@@ -27,31 +27,61 @@ public class Main {
                     "5 - Add a vehicle\n"+
                     "6- Quit");
             int userInput = scanner.nextInt();
+            scanner.nextLine();
 
             switch (userInput){
                 case 1:
                     for (int i=0; i < vehicleCount; i++) {
-                        System.out.println("Vehicle ID: "+vehicles[i].getVehicleID()+
-                                " Make and Model: "+vehicles[i].getMakeModel()+
-                                " Color: " + vehicles[i].getColor()+
-                                " Odometer: " + vehicles[i].getOdometer()+
-                                " Price: " + vehicles[i].getPrice());
+                        System.out.println(vehicles[i].displayDetails());
                     }
                     break;
                 case 2:
-                    System.out.println("2");
+                    System.out.println("Enter make/model to search:");
+                    String makeModel = scanner.nextLine();
+                    System.out.println("Search results:");
+                    for (int i = 0; i < vehicleCount; i++) {
+                        if (vehicles[i].getMakeModel().equalsIgnoreCase(makeModel)) {
+                            System.out.println(vehicles[i].displayDetails()); // using this to call the same case from  the vehicle class
+                            // improves readability and reduces line usage
+                        }
+                    }
+
                     break;
                 case 3:
-                    System.out.println("3");
+                    System.out.println("Enter minimum price:");
+                    int minPrice = scanner.nextInt();
+                    System.out.println("Enter maximum price:");
+                    int maxPrice = scanner.nextInt();
+                    System.out.println("Search results:");
+                    for (int i = 0; i < vehicleCount; i++) {
+                        if (vehicles[i].getPrice() >= minPrice && vehicles[i].getPrice() <= maxPrice) {
+                            System.out.println(vehicles[i].displayDetails());
+                        }
+                    }
                     break;
                 case 4:
-                    System.out.println("4");
+                    System.out.println("Enter color to search:");
+                    String color = scanner.nextLine();
+                    System.out.println("Search results:");
+                    for (int i = 0; i < vehicleCount; i++) {
+                        if (vehicles[i].getColor().equalsIgnoreCase(color)) {
+                            System.out.println(vehicles[i].displayDetails());
+                        }
+                    }
                     break;
                 case 5:
-                    System.out.println("5");
+                    if (vehicleCount < vehicles.length) {
+                        vehicles[vehicleCount++] = Vehicle.addVehicles();
+                        System.out.println("Vehicle added successfully!");
+                    } else {
+                        System.out.println("Inventory is full. Cannot add more vehicles.");
+                    }
                     break;
                 case 6:
+                    System.out.println("Exiting Program...");
+                    Thread.sleep(1000);
                     System.exit(0);
+
             }
         }while (true);
 
