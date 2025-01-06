@@ -66,4 +66,10 @@ public class Book {
                 ", ISBN: " + isbn +
                 ", Book Title: " + title;
     }
+    public String displayCheckedOutBooks(){
+        return "Book ID: " + id +
+                ", ISBN: " + isbn +
+                ", Book Title: " + title +
+                ", Checked Out To: " + checkedoutTo;
+    }
 }
